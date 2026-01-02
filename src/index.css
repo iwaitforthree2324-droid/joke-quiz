@@ -24,6 +24,8 @@ a:hover {
 
 body {
   margin: 0;
+  height: 100%;
+  width: 100%;
   display: flex;
   place-items: center;
   min-width: 320px;
@@ -33,18 +35,23 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin: 0.5em;
 }
 
 button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
+  margin: 1em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+}
+p {
+  font-size: 1em;
 }
 button:hover {
   border-color: #646cff;
@@ -65,4 +72,23 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.container {
+  display: grid;
+  /* place-items: center; 縦横中央 */
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: #222;
+  color: white;
+  text-align: center;
+}
+
+.content {
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 24;
 }

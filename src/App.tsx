@@ -52,26 +52,29 @@ function App() {
   }
 
   return(
-    <div style = {{padding: 24}}>
-      <h1>Joke Quiz</h1>
-      <button onClick={handleNewJoke} disabled={loading}>
-        New Joke
-      </button>
-
-      {loading && <p>Loading...</p>}
-      {jokeError && <p>{jokeError}</p>}
-      {yesnoImgError && <p>{yesnoImgError}</p>}
-
-      {setup && !showPunchline && (
-        <button onClick={showElements}>
-          Reveal punchline
+    <div className = 'container'>
+      <div className = 'content'>
+        <h1>Joke Quiz</h1>
+        <button onClick={handleNewJoke} disabled={loading}>
+          New Joke
         </button>
-      )}
 
-      {setup && <p>Q: {setup}</p>}
-      {showPunchline && <p>A: {punchline}</p>}
-      <div style = {{width: 400}}>
-        {showYesnoImg && <p><img src={yesnoImg} alt="yesnoImg" width='300'/></p>}
+        {setup && !showPunchline && (
+          <button onClick={showElements}>
+            Reveal punchline
+          </button>
+        )}
+
+        {setup && <p>Q: {setup}</p>}        
+        {showPunchline && <p>A: {punchline}</p>}
+
+        {loading && <p>Loading...</p>}
+        {jokeError && <p>{jokeError}</p>}
+        {yesnoImgError && <p>{yesnoImgError}</p>}
+        
+        <div style = {{width: 400}}>
+          {showYesnoImg && <p><img src={yesnoImg} alt="yesnoImg" width='300'/></p>}
+        </div>
       </div>
     </div>
   );
